@@ -1,0 +1,163 @@
+:root {
+    --map-bg: #000;
+    --area-stroke: #39ff14; /* Neon Green */
+    --area-fill: rgba(0, 0, 0, 0.8);
+    --area-hover: rgba(57, 255, 20, 0.3);
+    --text-color: #39ff14;
+    --modal-bg: #1a1a1a;
+}
+
+body {
+    margin: 0;
+    background-color: var(--map-bg);
+    color: var(--text-color);
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    margin-top: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px var(--area-stroke);
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.map-container {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    aspect-ratio: 3/4; /* Adjust based on map aspect ratio */
+    position: relative;
+}
+
+svg#nakano-map {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 5px var(--area-stroke));
+}
+
+path.area {
+    fill: var(--area-fill);
+    stroke: var(--area-stroke);
+    stroke-width: 2;
+    cursor: pointer;
+    transition: fill 0.3s ease, transform 0.2s ease;
+}
+
+path.area:hover {
+    fill: var(--area-hover);
+    transform: scale(1.01);
+    z-index: 10;
+}
+
+text.label {
+    fill: var(--text-color);
+    font-size: 14px;
+    font-weight: bold;
+    pointer-events: none;
+    text-anchor: middle;
+    alignment-baseline: middle;
+    text-shadow: 0 0 2px black;
+}
+
+/* Modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--modal-bg);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid var(--area-stroke);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+    animation: zoomIn 0.3s forwards;
+    position: relative;
+    text-align: center;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.close-btn {
+    color: var(--text-color);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    margin-top: 20px;
+}
+
+.video-wrapper iframe, .video-wrapper #player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+#modal-title {
+    margin-top: 0;
+    color: var(--text-color);
+    text-shadow: 0 0 5px var(--area-stroke);
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    text.label {
+        font-size: 10px; /* Smaller labels on mobile */
+    }
+}
