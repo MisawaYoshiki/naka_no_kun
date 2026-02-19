@@ -10,7 +10,7 @@ const areas = [
   { id: "nogata", name: "野方", videoId: "6x7QFNRGmAE" },
   { id: "numabukuro", name: "沼袋", videoId: "J7TRY__uk_8" },
   { id: "arai", name: "新井", videoId: "gV8kJVy5GD0" },
-  { id: "nakano", name: "中野", videoId: "1jERR3AeHkQ" },
+  { id: "nakano", name: "中野", videoId: "YZN5iqfck4c" },
   { id: "egota", name: "江古田", videoId: "ZCD61J9E7Io" },
   { id: "eharacho", name: "江原町", videoId: "rveV9ICV4LI" },
   { id: "matsugaoka", name: "松が丘", videoId: "BpN8xZ3_KTE" },
