@@ -17,7 +17,7 @@ const areas = [
   { id: "kamitakada", name: "上高田", videoId: "dQw4w9WgXcQ" },
   { id: "higashinakano", name: "東中野", videoId: "dQw4w9WgXcQ" },
   { id: "chuo", name: "中央", videoId: "dQw4w9WgXcQ" },
-  { id: "honcho", name: "本町", videoId: "dQw4w9WgXcQ" },
+  { id: "honcho", name: "本町", videoId: "1jERR3AeHkQ" },
   { id: "yayoimachi", name: "弥生町", videoId: "dQw4w9WgXcQ" },
   { id: "minamidai", name: "南台", videoId: "dQw4w9WgXcQ" }
 ];
