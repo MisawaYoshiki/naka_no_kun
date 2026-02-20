@@ -201,65 +201,23 @@ text.label.wiggle {
     }
 }
 
-/* ===== MAP装飾（ホラー配置） ===== */
+/* ===== 統合タイトル装飾 ===== */
 
-.map-decoration {
+.map-title-decoration {
     position: absolute;
-    z-index: 30;
+    top: -78px;
+    left: 52%;
+    transform: translateX(-50%);
+    width: 540px;        /* PCサイズ */
+    z-index: 5;
     pointer-events: none; /* クリック邪魔しない */
-    opacity: 0.95;
 }
-
-/* 上中央 */
-.dec-top {
-    top: -80px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 400px;
-}
-
-/* 右上 */
-.dec-top-right {
-    top: 20px;
-    right: -60px;
-    width: 220px;
-    transform: rotate(15deg);
-}
-
-/* 左下 */
-.dec-bottom-left {
-    bottom: 40px;
-    left: -80px;
-    width: 200px;
-}
-
-/* 下中央 */
-.dec-bottom {
-    bottom: -120px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 450px;
-}
-
 @media (max-width: 600px) {
 
-    .dec-top {
-        width: 220px;
-        top: -40px;
+    .map-title-decoration {
+        top: -60px;
+        width: 100%;
+        max-width: none;
     }
 
-    .dec-top-right {
-        width: 140px;
-        right: -30px;
-    }
-
-    .dec-bottom-left {
-        width: 120px;
-        left: -40px;
-    }
-
-    .dec-bottom {
-        width: 260px;
-        bottom: -60px;
-    }
 }
