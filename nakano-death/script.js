@@ -153,5 +153,33 @@ function closeModal() {
     }
 }
 
+// ホラー強化ランダム揺れ
+function triggerRandomWiggle() {
+    const labels = document.querySelectorAll(".label");
+
+    if (labels.length === 0) return;
+
+    const randomLabel = labels[Math.floor(Math.random() * labels.length)];
+
+    randomLabel.classList.add("wiggle");
+
+    setTimeout(() => {
+        randomLabel.classList.remove("wiggle");
+    }, 600);
+
+    // 次回発動をランダム時間で再帰実行
+    const nextTime = 1500 + Math.random() * 4000;
+    setTimeout(triggerRandomWiggle, nextTime);
+}
+
+
+
+
+
 // Init
 document.addEventListener('DOMContentLoaded', initMap);
+
+window.addEventListener("load", () => {
+    triggerRandomWiggle();
+});
+
