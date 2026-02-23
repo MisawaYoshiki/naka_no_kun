@@ -36,13 +36,18 @@ function initMap() {
     // 手動座標指定（必要エリアのみ）
     const manualPositions = {
         nogata: { y: 290 },          // 野方
-        egota: { y: 238 },           // 江古田
-        matsugaoka: { y: 270 },      // 松が丘
+        egota: { x: 356,y: 238 },           // 江古田
+        matsugaoka: { x: 404, y: 269 } ,      // 松が丘
         numabukuro: { y: 278 },      // 沼袋
         higashinakano: { x: 500 },   // 東中野
         nakano: { y: 400 },          // 中野
         honcho: { y: 490 },          // 本町
-        minamidai: { y: 585 }        // 南台
+        minamidai: { y: 585 },        // 南台
+        shirasagi: { x: 110, y: 290 },// 白鷺
+        kamisaginomiya: { x: 68, y: 198 },// 上鷺宮
+        wakamiya: { x: 186} ,// 若宮
+        yamatocho: { x: 216, y: 345  },// 大和町
+        maruyama: { y: 250  }// 丸山
     };
 
     // Generate paths
