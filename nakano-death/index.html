@@ -78,29 +78,23 @@
     <!-- YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
 
-            const splash = document.getElementById("splash");
+        const splash = document.getElementById("splash");
+        if (!splash) return;
 
-            // 初回アクセス判定
-            if (!localStorage.getItem("splashShown")) {
+        setTimeout(() => {
+            splash.classList.add("fade-out");
 
-                setTimeout(() => {
-                    splash.classList.add("fade-out");
-
-                    setTimeout(() => {
-                        splash.style.display = "none";
-                    }, 1000);
-
-                }, 2500); // 表示時間（ミリ秒）
-
-                localStorage.setItem("splashShown", "true");
-
-            } else {
+            setTimeout(() => {
                 splash.style.display = "none";
-            }
-        });
-</script>
+            }, 1000); // フェード時間
+
+        }, 1500); // 表示時間（調整可）
+
+    });
+    </script>
+
 
 </body>
 </html>
